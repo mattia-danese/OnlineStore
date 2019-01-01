@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--Mattia Danese-->
+<html>
+	<head>
+		
+		<link rel = "stylesheet" type = "text/css" href = "theme.css">
+		<title>Home Page</title>
+		
+		<style>
+			body
+			{
+				background-color:#c6fff8;
+			}
+			textarea
+			{
+				resize:none;
+				width: 45vw;
+			}
+			#allReviews
+			{
+				width:50%;
+				text-align: center;
+				margin-left:25%; 
+			}
+			#subB
+			{
+				display:inline;
+			}
+			#login
+			{
+				position:absolute;
+				left:90%;
+				top:5%;
+			}
+			#subB
+			{
+				display:block;
+				color:black;
+				background-color:#93a3ff;
+				border-radius:20px;
+			}
+			#imgShow
+			{
+				width:250px;
+			}
+			#showcase
+			{
+				text-align:center;
+				margin:5%;
+			}
+		</style>
+		<script src = "essentials.js"></script>
+		<script>
+			function initialize()
+			{
+				customReview = document.getElementById("newRev");
+				allReviews = document.getElementById("allReviews");
+				idStuff = document.getElementById("login");
+				image = document.getElementById("imgShow");
+				link = document.getElementById("showing");
+				idNum = 4;
+				x = 1;
+				y = 1;
+				
+				images = ["options/menclothes.jpg", "options/womenclothes.jpg", "options/accessories.jpg", "options/schoolSupplies.jpg"];
+				links = ["menclothing.html", "womenclothing.html", "accessories.html", "schoolSupplies.html"];
+				
+				checkLogin();
+				showCaseGo();
+			}
+			
+			function clearRev()
+			{
+				customReview.value = "";
+			}
+			
+			function createNewReview()
+			{	
+				var newElement = document.createElement("div");
+				newElement.innerHTML = customReview.value;
+				newElement.id = "rev" + idNum;
+				allReviews.insertBefore(newElement,allReviews.childNodes[allReviews.childNodes.length - 4]);
+				
+				newElement = document.createElement("hr");
+				allReviews.insertBefore(newElement,allReviews.childNodes[allReviews.childNodes.length - 4]);
+				
+				customReview.value = "Write a review...";
+				idNum++;
+			}
+			
+			function showCaseGo()
+			{
+				var timer = setInterval(function(){
+					if(x > 3)
+					{
+						x = 0;
+					}
+					if(y > 3)
+					{
+						y = 0;
+					}
+					image.src = images[x];
+					link.href = links[y];
+					x++;
+					y++;
+				}, 1500);
+			}
+			
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<div class = "columncontainer">
+			<h1 class = "company">
+				Foopreme
+			</h1>
+			<span id = "login">
+				<a href = "login.html?menclothing.html">Login</a>
+				<span>/</span>
+				<a href = "signin.html?menclothing.html">Sign Up</a>
+			</span>
+			<div class = "column">
+				<a class = "colcontent" href = "index.html">Home</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "menclothing.html">Men's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "womenclothing.html">Women's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "accessories.html">Accessories</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "schoolSupplies.html">School Supplies</a>
+			</div>
+		</div>
+		
+		<div id = "showcase">
+			<div>
+				See something that you like? Just click it!
+			</div>
+			<a id = "showing" href = "menclothing.html">
+				<img id = "imgShow" src = "options/menclothes.jpg"/>
+			</a>
+		</div>
+	
+		
+		<div id = "allReviews">
+			<h3 id = "reviews">
+			Reviews
+			</h3>
+			<hr />
+			<div id = "rev1">
+				My favorite store! Everything is of such high quality.
+			</div>
+			<hr />
+			<div id = "rev2">
+				Price is great for what you're getting. Would totally recommend.
+			</div>
+			<hr />
+			<div id = "rev3">
+				I only shop here now, it's great!
+			</div>
+			<hr />
+			<textarea id = "newRev" onclick = "clearRev();">Write a review...</textarea>
+			<button id = "subB" onclick = "createNewReview();">
+				Submit
+			</button>
+		</div>
+	</body>
+</html>

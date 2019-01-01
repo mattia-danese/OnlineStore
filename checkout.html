@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--Mattia Danese-->
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "theme.css">
+		<title>Checkout</title>
+		
+		<style>
+			
+			#last , .price 
+			{
+				display:block;
+				margin-bottom: 10px;
+			}
+			
+			#error
+			{
+				position:absolute;
+				top:50%;
+				left:48%;
+				display:none;
+			}
+		</style>
+		<script src = "essentials.js"></script>
+		<script>
+			function initialize()
+			{
+			}
+			
+			function create(bag)
+			{
+				var cost = 0;
+				idStuff = document.getElementById("login");
+				finalCost = document.getElementById("total");
+				errMsg = document.getElementById("error");
+				link = document.getElementById("last");
+				
+				if(bag == "")
+				{
+					errMsg.style.display = "block";
+					finalCost.style.display = "none";
+					link.style.display = "none";
+				}
+				else
+				{
+					var stuff = bag.split(";");
+					
+					for(var i = 0; i < stuff.length; i++)
+					{	
+						var obj = JSON.parse(stuff[i]);
+						stuff[i] = obj;
+					}
+					
+					for(var a = 0; a < stuff.length; a++)
+					{
+						var newElement = document.createElement("img");
+						newElement.src = stuff[a].image;
+						document.body.appendChild(newElement);
+						
+						newElement = document.createElement("div");
+						newElement.innerHTML = stuff[a].name;
+						document.body.appendChild(newElement);
+						
+						newElement = document.createElement("div");
+						newElement.innerHTML = "$" + stuff[a].price;
+						document.body.appendChild(newElement);
+						
+						newElement = document.createElement("div");
+						newElement.innerHTML = "Quantity:" + stuff[a].quantity;
+						newElement.setAttribute("class", "price");
+						document.body.appendChild(newElement);
+						
+						cost = cost + (Number(stuff[a].price) * Number(stuff[a].quantity));
+					}
+					totalPrice(cost);
+				}
+				
+			}
+			
+			function totalPrice(num)
+			{
+				checkLogin();
+				var total = num;
+				if(idStuff.innerHTML.includes("Hello"))
+				{
+					total = Math.round(num * 0.9);
+				}
+				finalCost.innerHTML = "Total:" + " $" + total;
+			}
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<div class = "columncontainer">
+			<h1 class = "company">
+				Foopreme
+			</h1>
+			<span id = "login">
+				<a href = "login.html?menclothing.html">Login</a>
+				<span>/</span>
+				<a href = "signin.html?menclothing.html">Sign Up</a>
+			</span>
+			<div class = "column">
+				<a class = "colcontent" href = "index.html">Home</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "menclothing.html">Men's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "womenclothing.html">Women's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "accessories.html">Accessories</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "schoolSupplies.html">School Supplies</a>
+			</div>
+		</div>
+		
+		<h3 id = "total"> 
+		</h3>
+		<a href = "congrats.html" id = "last">Proceed to Checkout</a>
+		<div id = "error">
+			Your bag is empty
+		</div>
+	</body>
+</html>

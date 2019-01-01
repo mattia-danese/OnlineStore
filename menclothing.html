@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--Mattia Danese-->
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "theme.css">
+		<title>Men's Clothes</title>
+		
+		<style>
+			#colorw
+			{
+				background-color:white;
+				position:absolute;
+				left:28.5%;
+				top:34.5%;
+			}
+			#colorb
+			{
+				background-color:blue;
+				position:absolute;
+				left:30%;
+				top:34.5%;
+			}
+			.chapter
+			{
+				margin-left:5%;
+			}
+		</style>
+		<script src = "essentials.js"></script>
+		<script>
+			function initialize()
+			{
+				images = ["Men/hoodies/whoodie.jpeg","Men/hoodies/bhoodie.jpeg","Men/shirts/wshirt.jpeg","Men/shirts/bshirt.jpeg","Men/shorts/wshort.jpeg","Men/shorts/bshort.jpeg","Men/long/wlong.jpeg","Men/long/blong.jpeg"];
+				names = ["White Hoodie","Blue Hoodie","White T-Shirt","Blue T-Shirt","White Shorts","Blue Shorts","White Long Sleeve","Blue Long Sleeve"];
+				prices = ["80","80","15","15","20","20","30","30"];
+				overviews = ["Constructed of soft, warm fleece. Keep your hands warm in the front kangaroo pocket. ","Constructed of soft, warm fleece. Keep your hands warm in the front kangaroo pocket. ","Helps keep the air flowing and lets you move naturally so you can stay comfortable and focused from your warm-up to your cool-down.","Helps keep the air flowing and lets you move naturally so you can stay comfortable and focused from your warm-up to your cool-down.","The Nike Elite Men's 9 inch Basketball Shorts feature sweat-wicking fabric and mesh panels for cooling comfort on the court.","The Nike Elite Men's 9 inch Basketball Shorts feature sweat-wicking fabric and mesh panels for cooling comfort on the court.","Features lightweight, sweat-wicking fabric and four-way stretch to help keep you dry and comfortable through your workout","Features lightweight, sweat-wicking fabric and four-way stretch to help keep you dry and comfortable through your workout"];
+				
+				title = document.getElementById("title");
+				price = document.getElementById("price");
+				overview = document.getElementById("overview");
+				idStuff = document.getElementById("login");
+				quant = document.getElementById("howMany");
+				fundText = document.getElementById("refund");
+				fundText2 = document.getElementById("refund2");
+				termText = document.getElementById("terms");
+				termText2 = document.getElementById("terms2");
+				fund = document.getElementById("fund");
+				term = document.getElementById("term");
+				
+				populate();
+				checkLogin();
+			}
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<div class = "columncontainer">
+			<h1 class = "company">
+				Foopreme
+			</h1>
+			<span id = "login">
+				<a href = "login.html?menclothing.html">Login</a>
+				<span>/</span>
+				<a href = "signin.html?menclothing.html">Sign Up</a>
+			</span>
+			<div class = "column">
+				<a class = "colcontent" href = "index.html">Home</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "menclothing.html">Men's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "womenclothing.html">Women's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "accessories.html">Accessories</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "schoolSupplies.html">School Supplies</a>
+			</div>
+		</div>
+		<br />
+		<h2 class = "chapter">
+			Men's Clothes
+		</h2>
+		
+		<img src = "Men/hoodies/whoodie.jpeg" class = "big" id = "big" />
+		<div id = "title"></div>
+		<div id = "price"></div>
+		<div id = "overview"></div>
+		<div id = "color">
+			Color:
+		</div>
+		<div class = "colors" id = "colorw" onclick = "changeColor('white');"></div>
+		<div class = "colors" id = "colorb" onclick = "changeColor('blue');"></div>
+		<div id = "quantity">
+			Quantity:
+			<select size = "1" id = "howMany">
+				<option value = "1">
+					1
+				</option>
+				<option value = "2">
+					2
+				</option>
+				<option value = "3">
+					3
+				</option>
+				<option value = "4">
+					4
+				</option>
+				<option value = "5">
+					5
+				</option>
+			</select>
+		</div>
+		<br />
+		<button id = "addbag" onclick = "addBag();">
+			Add To Bag
+		</button>
+		<a href = "checkout.html" id = "checkout">CheckOut</a>
+		
+		<h3 id = "related">
+			Related Prodcuts
+		</h3>
+		<img src = "Men/shirts/wshirt.jpeg" class = "small" id = "small1" onclick = "selectBig(this);" />
+		<img src = "Men/shorts/wshort.jpeg" class = "small" id = "small2" onclick = "selectBig(this);" />
+		<img src = "Men/long/wlong.jpeg" class = "small" id = "small3" onclick = "selectBig(this);" />
+			
+		<span id = "refund" onclick = "showRefund2();">
+			Refund Policy
+		</span>
+		<div id = "refund2">
+			No refunds, no exceptions. If a product has a manufacturing issue, email us at customerService@foopreme.com within a week and we will replace that item.
+		</div>
+	
+		<span id = "terms" onclick = "showTermText2();">
+			Terms of Use
+		</span>
+		<div id = "terms2">
+			By using our website you are agreeing with out Terms of Use. We may change or update these terms so please check regularly. We reserve the right to correct any errors of omissions, and to change or update information at any time without prior notice. Tamporing with our website is in no way allowed and punishable with up to 10 years in prison.  
+		</div>
+	</body>
+</html>

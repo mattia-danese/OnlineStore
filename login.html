@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<!--Mattia Danese-->
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "theme.css">
+		<title></title>
+		
+		<style>
+			body
+			{
+				text-align:center;
+			}
+		</style>
+		<script>
+			function initialize()
+			{
+				logLink = document.getElementById("form");
+				passQString();
+			}
+			
+			function passQString()
+			{
+				var qstr = window.location.search.substring(1);
+				logLink.action = qstr;
+			}
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<div class = "columncontainer">
+			<h1 class = "company">
+				Foopreme
+			</h1>
+			<div class = "column">
+				<a class = "colcontent" href = "index.html">Home</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "menclothing.html">Men's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "womenclothing.html">Women's</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "accessories.html">Accessories</a>
+			</div>
+			
+			<div class = "column">
+				<a class = "colcontent" href = "schoolSupplies.html">School Supplies</a>
+			</div>
+			<form method = "post" action = "" id = "form">
+				<div class = "input">
+					Username:<input type = "text" name = "uname"/>
+				</div>
+				<br />
+				<div class = "input">
+					Password:<input type = "text" name = "pword"/>
+				</div>
+				<input type = "submit" id = "subB" class = "input"/>
+			</form>
+			<br />
+			<a href = "signin.html">Sign Up!</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,212 @@
+body
+{
+	background-color:#c6fff8;
+}
+.columncontainer
+{
+	
+	display:block;
+	text-align:center;
+	width:100%;
+}
+
+.column
+{
+	display:inline-block;
+	vertical-align:top;
+	width:16%;
+	padding:1%;
+	border: thin solid black;
+	background-color:red;
+}
+
+.colcontent
+{
+	display:inline;
+	color:black;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.colcontent:hover
+{
+	color:white;
+	text-decoration:underline;
+}
+
+#info
+{
+	border: thin solid black;
+}
+
+#login
+{
+	position:absolute;
+	left:90%;
+	top:5%;
+}
+
+#red
+{
+	color:red;
+}
+
+.big
+{
+	width:20%;
+	display:inline;
+	border:thick solid black;
+}
+
+.small
+{
+	width:10%;
+	border: thin solid black;
+}
+
+#title
+{
+	position:absolute;
+	left:25%;
+	top:25%;
+	font-size:large;
+	text-decoration:underline;
+}
+
+#price
+{
+	position:absolute;
+	left:25%;
+	top:28%;
+	font-size:large;
+}
+
+#overview
+{
+	position:absolute;
+	left:25%;
+	top:31%;
+	font-size:large;
+}
+
+.colors
+{
+	width:15px;
+	height:15px;
+	border:thin solid black;
+}
+
+#color
+{
+	position:absolute;
+	left:25%;
+	top:34%;
+	font-size:large;
+}
+
+#quantity
+{
+	position:absolute;
+	left:25%;
+	top:37%;
+	font-size:large;
+}
+
+#addbag
+{
+	position:absolute;
+	left:25%;
+	top:41%;
+	color:black;
+	background-color:#93a3ff;
+	border-radius:20px;
+}
+
+#related
+{
+	position:absolute;
+	top:37%;
+	left:61%;
+}
+
+#small1
+{
+	position:absolute;
+	top:42.5%;
+	left:50%;
+}
+
+#small2
+{
+	position:absolute;
+	top:42.5%;
+	left:61%;
+}
+
+#small3
+{
+	position:absolute;
+	top:42.5%;
+	left:72%;
+}
+
+#checkout
+{
+	position:absolute;
+	left:25%;
+	top:45%;
+}
+
+#refund2 , #terms2
+{
+	display:none;
+}
+
+#refund:hover , #terms:hover
+{
+	text-decoration:underline;
+}
+
+#refund
+{
+	position:absolute;
+	bottom:35%;
+}
+
+#refund2
+{
+	position:absolute;
+	bottom:33%;
+	width:75%;
+}
+
+#terms
+{
+	position:absolute;
+	bottom:28%;
+}
+
+#terms2
+{
+	position:absolute;
+	bottom:21.5%;
+	width:75%;
+}
+
+#subB
+{
+	display:block;
+	color:black;
+	background-color:#93a3ff;
+	border-radius:20px;
+	margin-left:48%;
+}
+
+.input
+{
+	margin-top:1%;
+}
+
+
+
+
